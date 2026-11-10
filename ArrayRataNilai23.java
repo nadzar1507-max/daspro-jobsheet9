@@ -4,7 +4,10 @@ public class ArrayRataNilai23 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] nilaiMhs = new int[10];
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlah = sc.nextInt();
+
+        int[] nilaiMhs = new int[jumlah];
         int total = 0;
         double rata2;
 
@@ -21,6 +24,7 @@ public class ArrayRataNilai23 {
 
         int tertinggi = nilaiMhs[0];
         int terendah = nilaiMhs[0];
+
         for (int i = 1; i < nilaiMhs.length; i++) {
             if (nilaiMhs[i] > tertinggi) {
                 tertinggi = nilaiMhs[i];
@@ -29,8 +33,17 @@ public class ArrayRataNilai23 {
                 terendah = nilaiMhs[i];
             }
         }
+
         System.out.println("Nilai tertinggi: " + tertinggi);
         System.out.println("Nilai terendah: " + terendah);
+
+        int jmlLulus = 0;
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            if (nilaiMhs[i] > 70) {
+                jmlLulus++;
+            }
+        }
+        System.out.println("Jumlah mahasiswa yang lulus (> 70): " + jmlLulus);
 
         System.out.print("Predikat Kelas: ");
         if (rata2 >= 85) {
@@ -41,6 +54,5 @@ public class ArrayRataNilai23 {
             System.out.println("PERLU PENDAMPINGAN");
         }
 
-        
     }
 }
